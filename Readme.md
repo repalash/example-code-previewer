@@ -4,6 +4,8 @@
 
 A minimal code viewer for html with support for syntax highlighting, multiple files, codepen prefill. 
 
+Source code on Github: https://github.com/repalash/example-code-previewer/
+
 ## Demo
 
 Check out the [simple](https://repalash.github.io/example-code-previewer/examples/simple.html) and [complex](https://repalash.github.io/example-code-previewer/examples/threejs.html) (with [three.js](https://threejs.org)) live demos
@@ -56,4 +58,5 @@ npm version
 MIT
 
 ## References
+Syntax highlighting with [Speed highlight JS](https://github.com/speed-highlight/core)
 Generated with [rollup-library-starter](https://github.com/repalash/rollup-library-starter)
