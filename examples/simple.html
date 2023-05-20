@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Sample</title>
+
+    <style id="example-style">
+        html, body, #container{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: #5588ff;
+        }
+        .card{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            max-width: 90%;
+            max-height: 90%;
+            overflow: auto;
+        }
+    </style>
+    <script type="module" id="code-preview-snippet">
+        import {setupCodePreview} from './../dist/index.js'
+
+        // for codepen
+
+        setupCodePreview(
+            document.getElementById('container'),
+            [document.getElementById('example-script'), "./simple.html"], // scripts
+            ['js snippet', 'simple.html'],
+            ["https://github.com/repalash/example-code-previewer/tree/master/examples/simple.html","https://github.com/repalash/example-code-previewer/tree/master/examples/simple.html"], // links (source/github/gitlab etc)
+            (c)=> c + `\n // Append some code here`,
+            {
+                title: 'Example: ' + document.title,
+                css: document.getElementById('example-style').textContent,
+            },
+        ).then(actions=>{
+            document.querySelector('#container').addEventListener('click', (e)=> e.target.id==='container' && actions.close())
+        })
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <div class="card">
+    Counter: <span id="counter">0</span> <br> <br>
+    <button id="increment">Increment</button>
+    </div>
+</div>
+<script id="example-script">
+    const counter = document.getElementById('counter')
+    const btn = document.getElementById('increment');
+    console.log('counter', counter)
+    btn.addEventListener('click', ()=>{
+        counter.textContent = (parseInt(counter.textContent) + 1).toString()
+        console.log('incremented', counter.textContent)
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "name": "example-code-previewer",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "source": "src/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "dev": "rollup -c -w",
+    "serve": "ws -p 8000",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist",
+    "src",
+    "examples",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/repalash/example-code-previewer.git"
+  },
+  "keywords": [
+    "typescript",
+    "html",
+    "code-viewer",
+    "syntax-highlighting",
+    "code-previewer",
+    "three.js",
+    "template",
+    "javascript",
+    "library"
+  ],
+  "author": "repalash <palash@shaders.app>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/repalash/example-code-previewer/issues"
+  },
+  "homepage": "https://github.com/repalash/example-code-previewer#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.1.0",
+    "@speed-highlight/core": "^1.1.11",
+    "clean-package": "^2.2.0",
+    "local-web-server": "^5.2.1",
+    "rollup": "^3.4.0",
+    "rollup-plugin-import-css": "^3.2.1",
+    "rollup-plugin-license": "^3.0.1",
+    "@types/three": "^0.152.0"
+  },
+  "optionalDependencies": {
+    "win-node-env": "^0.6.1"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "type": "module"
+}

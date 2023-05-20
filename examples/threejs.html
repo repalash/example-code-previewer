@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GLTF Loader</title>
+
+    <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+    }
+  }
+    </script>
+
+    <style id="example-style">
+        html, body, #canvas-container, #mcanvas {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+    <script type="module">
+        import {setupCodePreview} from './../dist/index.js'
+
+        // for codepen
+        const parameters = [
+            // replace imports
+            (c)=> c
+                .replaceAll(' from \'three\'', ' from \'https://unpkg.com/three@0.152.2/build/three.module.js\'')
+                .replaceAll(' from \'three/examples/jsm', ' from \'https://unpkg.com/three@0.152.2/examples/jsm')
+                .replaceAll(' from \'three/addons', ' from \'https://unpkg.com/three@0.152.2/examples/jsm'),
+            {
+                title: 'Example: ' + document.title,
+                css: document.getElementById('example-style').textContent,
+            },
+
+            // required for three.js addons
+            `
+<!-- Import maps polyfill -->
+<!-- Remove this when import maps will be widely supported -->
+<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"><\/script>
+<script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.152.2/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.152.2/examples/jsm/"
+    }
+  }
+<\/script>
+    `
+        ]
+
+        setupCodePreview(
+            document.getElementById('canvas-container'),
+            ["./script.ts","./script.js", "./index.html"], // scripts
+            ['js', 'ts'], // labels/titles
+            ["https://github.com/repalash/example-code-previewer/tree/master/examples/script.ts","https://github.com/repalash/example-code-previewer/tree/master/examples/script.js", "https://github.com/repalash/example-code-previewer/tree/master/examples/threejs.html"], // links (source/github/gitlab etc)
+            ...parameters
+        ).then(actions=>{
+            // close on canvas click
+            document.getElementById('mcanvas').addEventListener('click', ()=> actions.close())
+        })
+
+    </script>
+    <script id="example-script" type="module" src="./script.js"></script>
+</head>
+<body>
+<div id="canvas-container">
+    <canvas id="mcanvas"></canvas>
+</div>
+</body>
+</html>
