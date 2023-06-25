@@ -1,10 +1,13 @@
 # Example Code Previewer
 
+[![NPM Package](https://img.shields.io/npm/v/example-code-previewer.svg)](https://www.npmjs.com/package/example-code-previewer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ![Example code viewer](./examples/hero-image.jpg)
 
-A minimal code viewer for html with support for syntax highlighting, multiple files, codepen prefill. 
+A minimal code viewer for html with support for syntax highlighting, multiple files, codepen prefill.
 
-Source code on Github: https://github.com/repalash/example-code-previewer/
+Source code on Github: [https://github.com/repalash/example-code-previewer/](https://github.com/repalash/example-code-previewer/)
 
 ## Demo
 
@@ -12,6 +15,7 @@ Check out the [simple](https://repalash.github.io/example-code-previewer/example
 
 ## Usage
 
+Use directly in the HTML file with a CDN link
 ```html
 <script type="module">
 import {setupCodePreview} from 'https://cdn.jsdelivr.net/gh/repalash/example-code-previewer/dist/index.js'
@@ -33,18 +37,27 @@ setupCodePreview(
 </script>
 ```
 
+or install from `npm` and import
+
+```bash
+npm install example-code-previewer
+```
+```js
+import {setupCodePreview} from 'example-code-previewer'
+```
+
 ## Development
-Build for development (Build and watch): 
+Build for development (Build and watch):
 ```bash
 npm run dev
 ```
-To serve the local build and examples, run 
+To serve the local build and examples, run
 ```bash
 npm run serve
 ```
 
 
-Build for production (Build): 
+Build for production (Build):
 ```bash
 npm run build
 ```
@@ -58,5 +71,7 @@ npm version
 MIT
 
 ## References
+
 Syntax highlighting with [Speed highlight JS](https://github.com/speed-highlight/core)
+
 Generated with [rollup-library-starter](https://github.com/repalash/rollup-library-starter)
